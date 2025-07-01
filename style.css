@@ -45,7 +45,6 @@ main {
   display: block;
 }
 
-/* Bubble overlay: STACK bubbles vertically in both web and mobile overlays */
 .bubble-overlay.desktop-bubble,
 .bubble-overlay.mobile-bubble {
   display: flex;
@@ -58,7 +57,7 @@ main {
 .desktop-bubble {
   position: absolute;
   top: 24%;
-  left: 66.4%; /* moved further to the right */
+  left: 66.4%;
   width: 16vw;
   min-width: 200px;
   max-width: 260px;
@@ -66,6 +65,7 @@ main {
   z-index: 2;
 }
 
+/* Mobile view */
 @media (max-width: 900px) {
   .web-layout {
     display: none;
@@ -103,20 +103,20 @@ main {
 .speech-bubble {
   border-radius: 22px;
   padding: 18px 22px;
-  max-width: 100%;
+  width: 260px;
   font-size: 1.13rem;
   position: relative;
   box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
-  text-align: center;
+  text-align: left;
   pointer-events: auto;
   word-break: break-word;
   z-index: 2;
   border: none;
   outline: none;
-  /* Soft digital glow */
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
   background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
   color: #222;
+  box-sizing: border-box;
 }
 
 .speech-bubble:after {
@@ -127,20 +127,20 @@ main {
 .user-bubble {
   border-radius: 22px;
   padding: 18px 22px;
-  max-width: 100%;
+  width: 260px;
   font-size: 1.13rem;
   position: relative;
   box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
-  text-align: center;
+  text-align: left;
   pointer-events: auto;
   word-break: break-word;
   z-index: 2;
   border: none;
   outline: none;
-  /* Soft digital glow */
   filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
   background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
   color: #222;
+  box-sizing: border-box;
 }
 
 @media (max-width: 600px) {
@@ -150,13 +150,11 @@ main {
     max-width: 260px;
     top: 29.7%;
   }
-  .speech-bubble {
-    font-size: 0.99rem;
-    padding: 10px 10px;
-  }
+  .speech-bubble,
   .user-bubble {
     font-size: 0.99rem;
     padding: 10px 10px;
+    width: 180px;
   }
 }
 
