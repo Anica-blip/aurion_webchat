@@ -48,9 +48,8 @@ main {
 /* Bubble for web view */
 .desktop-bubble {
   position: absolute;
-  /* Place this as needed to fit the phone area. Adjust top/left if you want. */
   top: 24%;
-  left: 72.4%;
+  left: 60.4%; /* moved further to the left */
   width: 16vw;
   min-width: 200px;
   max-width: 260px;
