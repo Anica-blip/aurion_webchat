@@ -147,6 +147,11 @@ main {
     padding: 10px 10px;
   }
 }
+ .user-bubble {
+    font-size: 0.99rem;
+    padding: 10px 10px;
+  }
+}
 
 .mobile-layout {
   display: none;
