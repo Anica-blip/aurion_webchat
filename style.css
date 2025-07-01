@@ -49,7 +49,7 @@ main {
 .desktop-bubble {
   position: absolute;
   top: 24%;
-  left: 56.4%; /* shifted further to the left */
+  left: 64.4%; /* moved further to the right */
   width: 16vw;
   min-width: 200px;
   max-width: 260px;
