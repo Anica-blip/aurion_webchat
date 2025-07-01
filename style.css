@@ -50,19 +50,19 @@ main {
 .bubble-overlay.mobile-bubble {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px; /* Optional: space between bubbles */
+  align-items: stretch; /* CHANGED */
+  gap: 12px;
 }
 
 /* Bubble for web view */
 .desktop-bubble {
   position: absolute;
   top: 24%;
-  left: 66.4%; /* moved further to the right */
+  left: 66.4%;
   width: 16vw;
   min-width: 200px;
   max-width: 260px;
-  /* display: flex;  <-- This is now handled by the selector above */
+  /* display: flex; handled by overlay */
   justify-content: center;
   align-items: flex-start;
   pointer-events: none;
@@ -98,7 +98,7 @@ main {
     width: 64vw;
     min-width: 175px;
     max-width: 320px;
-    /* display: flex;  <-- This is now handled by the selector above */
+    /* display: flex; handled by overlay */
     justify-content: center;
     align-items: flex-start;
     pointer-events: none;
@@ -121,14 +121,14 @@ main {
   z-index: 2;
   border: none;
   outline: none;
-  /* Soft digital glow */
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
+  width: 100%; /* ADDED */
+  box-sizing: border-box; /* ADDED */
 }
 
 .speech-bubble {
   background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
   color: #222;
-  /* Soft digital glow */
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
 }
 
@@ -136,11 +136,9 @@ main {
   display: none;
 }
 
-/* User bubble: clone of assistant with yellow colour and glow */
 .user-bubble {
   background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
   color: #222;
-  /* Soft digital glow */
   filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
 }
 
