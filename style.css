@@ -97,13 +97,17 @@ main {
   }
 }
 
-/* Modern, borderless, digital-friendly bubble style (shared by both) */
+/* Shared bubble style */
 .speech-bubble,
 .user-bubble {
+  background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
+  color: #222;
   border-radius: 22px;
   padding: 18px 22px;
-  max-width: 100%;
   font-size: 1.13rem;
+  max-width: 100%;
+  min-width: 120px;
+  max-width: 260px;
   position: relative;
   text-align: center;
   pointer-events: auto;
@@ -112,28 +116,11 @@ main {
   border: none;
   outline: none;
   margin-bottom: 14px;
-  min-width: 120px;
-  max-width: 260px;
   box-sizing: border-box;
   display: inline-block;
-}
-
-/* Assistant (Aurion) bubble */
-.speech-bubble {
-  background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
-  color: #222;
   box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
   align-self: flex-start;
-}
-
-/* User bubble for chat */
-.user-bubble {
-  background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
-  color: #222;
-  box-shadow: 0 8px 32px 0 rgba(244,211,94,0.16), 0 1.5px 16px 0 rgba(255,179,0,0.09);
-  filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
-  align-self: flex-end;
 }
 
 /* Responsive tweaks */
