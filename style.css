@@ -1,52 +1,19 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #111;
-  color: #fff;
-  width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+/* ... other styles ... */
 
-main {
-  width: 100vw;
-  min-height: 100vh;
+.web-layout {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.content {
+.desktop-bg {
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.mobile-layout {
-  display: flex;
-  position: relative;
-  width: 100vw;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  background: #111;
-}
-
-.mobile-bg {
-  width: 100vw;
-  min-width: 260px;
-  max-width: 460px;
   height: auto;
   display: block;
 }
 
-/* Bubble container positioned at 66.4% from the left */
-.bubble-overlay.mobile-bubble {
+/* The BUBBLE CONTAINER at correct offset (unchanged) */
+.bubble-overlay.desktop-bubble {
   position: absolute;
-  top: 29.7%;
+  top: 24%;
   left: 66.4%;
   width: 16vw;
   min-width: 200px;
@@ -56,10 +23,9 @@ main {
   align-items: flex-start;
   pointer-events: none;
   z-index: 2;
-  transform: none;
 }
 
-/* Shared bubble base style for both bubbles */
+/* BASE bubble style for BOTH bubbles */
 .bubble {
   border-radius: 22px;
   padding: 18px 22px;
@@ -78,7 +44,7 @@ main {
   display: inline-block;
 }
 
-/* Assistant (Aurion) bubble */
+/* Assistant bubble: color and neon */
 .speech-bubble {
   background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
   color: #222;
@@ -86,24 +52,10 @@ main {
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
 }
 
-/* User bubble */
+/* User bubble: color and neon */
 .user-bubble {
   background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
   color: #222;
   box-shadow: 0 8px 32px 0 rgba(244,211,94,0.16), 0 1.5px 16px 0 rgba(255,179,0,0.09);
   filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
-}
-
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .bubble-overlay.mobile-bubble {
-    width: 84vw;
-    min-width: 130px;
-    max-width: 260px;
-    top: 29.7%;
-  }
-  .bubble {
-    font-size: 0.99rem;
-    padding: 10px 10px;
-  }
 }
