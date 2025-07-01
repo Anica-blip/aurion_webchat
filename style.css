@@ -121,6 +121,14 @@ main {
   display: none;
 }
 
+/* User bubble: clone of assistant with yellow colour and glow */
+.user-bubble {
+  background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
+  color: #222;
+  box-shadow: 0 8px 32px 0 rgba(244,211,94,0.16), 0 1.5px 16px 0 rgba(255,179,0,0.09);
+  filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
+}
+
 @media (max-width: 600px) {
   .bubble-overlay.mobile-bubble {
     width: 84vw;
