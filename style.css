@@ -105,6 +105,7 @@ main {
 .user-bubble {
   border-radius: 22px;
   padding: 18px 22px;
+  max-width: 100%;
   font-size: 1.13rem;
   position: relative;
   box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
@@ -114,11 +115,8 @@ main {
   z-index: 2;
   border: none;
   outline: none;
+  /* Soft digital glow */
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
-  width: 100%;      /* Ensures both bubbles fill parent overlay */
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
 .speech-bubble {
