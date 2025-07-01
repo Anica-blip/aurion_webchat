@@ -49,7 +49,7 @@ main {
 .desktop-bubble {
   position: absolute;
   top: 24%;
-  left: 66.4%; /* moved further to the right */
+  left: 66.4%;
   width: 16vw;
   min-width: 200px;
   max-width: 260px;
@@ -97,7 +97,7 @@ main {
   }
 }
 
-/* Modern, borderless, digital-friendly bubble style */
+/* Assistant (Aurion) bubble */
 .speech-bubble {
   background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
   color: #222;
@@ -113,23 +113,32 @@ main {
   z-index: 2;
   border: none;
   outline: none;
-  /* Soft digital glow */
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
+  margin-bottom: 20px;
 }
 
-.speech-bubble:after {
-  content: "";
-  position: absolute;
-  bottom: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 14px 14px 0 14px;
-  border-style: solid;
-  border-color: #61d8e6 transparent transparent transparent;
-  filter: blur(0.5px);
-  opacity: 0.93;
+/* User bubble for chat */
+.user-bubble {
+  background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
+  color: #222;
+  border-radius: 22px;
+  padding: 18px 22px;
+  max-width: 100%;
+  font-size: 1.13rem;
+  position: relative;
+  box-shadow: 0 8px 32px 0 rgba(244,211,94,0.16), 0 1.5px 16px 0 rgba(255,179,0,0.09);
+  text-align: center;
+  pointer-events: auto;
+  word-break: break-word;
+  z-index: 2;
+  border: none;
+  outline: none;
+  filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
+  margin-left: auto;
+  margin-bottom: 20px;
 }
 
+/* Responsive tweaks */
 @media (max-width: 600px) {
   .bubble-overlay.mobile-bubble {
     width: 84vw;
@@ -137,7 +146,8 @@ main {
     max-width: 260px;
     top: 29.7%;
   }
-  .speech-bubble {
+  .speech-bubble,
+  .user-bubble {
     font-size: 0.99rem;
     padding: 10px 10px;
   }
