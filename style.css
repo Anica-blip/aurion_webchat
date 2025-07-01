@@ -54,7 +54,7 @@ main {
   min-width: 200px;
   max-width: 260px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: flex-start;
   pointer-events: none;
   z-index: 2;
@@ -90,52 +90,50 @@ main {
     min-width: 175px;
     max-width: 320px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: flex-start;
     pointer-events: none;
     z-index: 2;
   }
 }
 
-/* Assistant (Aurion) bubble */
-.speech-bubble {
-  background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
-  color: #222;
+/* Modern, borderless, digital-friendly bubble style (shared by both) */
+.speech-bubble,
+.user-bubble {
   border-radius: 22px;
   padding: 18px 22px;
   max-width: 100%;
   font-size: 1.13rem;
   position: relative;
-  box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
   text-align: center;
   pointer-events: auto;
   word-break: break-word;
   z-index: 2;
   border: none;
   outline: none;
+  margin-bottom: 14px;
+  min-width: 120px;
+  max-width: 260px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* Assistant (Aurion) bubble */
+.speech-bubble {
+  background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
+  color: #222;
+  box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
-  margin-bottom: 20px;
+  align-self: flex-start;
 }
 
 /* User bubble for chat */
 .user-bubble {
   background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
   color: #222;
-  border-radius: 22px;
-  padding: 18px 22px;
-  max-width: 100%;
-  font-size: 1.13rem;
-  position: relative;
   box-shadow: 0 8px 32px 0 rgba(244,211,94,0.16), 0 1.5px 16px 0 rgba(255,179,0,0.09);
-  text-align: center;
-  pointer-events: auto;
-  word-break: break-word;
-  z-index: 2;
-  border: none;
-  outline: none;
   filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
-  margin-left: auto;
-  margin-bottom: 20px;
+  align-self: flex-end;
 }
 
 /* Responsive tweaks */
