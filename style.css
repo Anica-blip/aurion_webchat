@@ -84,30 +84,29 @@ main {
   .bubble-overlay.mobile-bubble {
     position: absolute;
     top: 29.7%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 64vw;
-    min-width: 175px;
-    max-width: 320px;
+    left: 66.4%;
+    width: 16vw;
+    min-width: 200px;
+    max-width: 260px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     pointer-events: none;
     z-index: 2;
+    transform: none;
   }
 }
 
-/* Shared bubble style */
-.speech-bubble,
-.user-bubble {
+/* Assistant (Aurion) bubble */
+.speech-bubble {
   background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
   color: #222;
   border-radius: 22px;
   padding: 18px 22px;
-  font-size: 1.13rem;
   max-width: 100%;
   min-width: 120px;
   max-width: 260px;
+  font-size: 1.13rem;
   position: relative;
   text-align: center;
   pointer-events: auto;
@@ -120,7 +119,30 @@ main {
   display: inline-block;
   box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
-  align-self: flex-start;
+}
+
+/* User bubble for chat */
+.user-bubble {
+  background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
+  color: #222;
+  border-radius: 22px;
+  padding: 18px 22px;
+  max-width: 100%;
+  min-width: 120px;
+  max-width: 260px;
+  font-size: 1.13rem;
+  position: relative;
+  text-align: center;
+  pointer-events: auto;
+  word-break: break-word;
+  z-index: 2;
+  border: none;
+  outline: none;
+  margin-bottom: 14px;
+  box-sizing: border-box;
+  display: inline-block;
+  box-shadow: 0 8px 32px 0 rgba(244,211,94,0.16), 0 1.5px 16px 0 rgba(255,179,0,0.09);
+  filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
 }
 
 /* Responsive tweaks */
