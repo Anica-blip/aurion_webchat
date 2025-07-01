@@ -58,7 +58,7 @@ main {
   flex-direction: column;
   align-items: center; /* centers bubbles horizontally inside container */
   gap: 12px;
-  width: 16vw;
+  width: 260vw; /* fixed width matching bubble width */
   min-width: 200px;
   max-width: 260px;
   position: absolute;
@@ -66,6 +66,7 @@ main {
   left: 66.4%;
   pointer-events: none;
   z-index: 2;
+  align-items: center; /* centers child bubbles horizontally */
 }
 
 .speech-bubble,
