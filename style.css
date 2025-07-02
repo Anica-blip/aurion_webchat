@@ -71,7 +71,7 @@ main {
   justify-content: flex-end;
 }
 
-/* --- MOBILE VIEW: CENTER BUBBLES IN PHONE MOCKUP --- */
+/* --- MOBILE VIEW: BUBBLES AT TOP, NORMAL CHAT SCROLL-UP --- */
 @media (max-width: 900px) {
   .web-layout {
     display: none;
@@ -95,8 +95,8 @@ main {
   .bubble-overlay.mobile-bubble {
     position: absolute;
     left: 50%;
-    top: 50%; /* Center vertically */
-    transform: translate(-50%, -50%);
+    top: 19%; /* Back to initial top-aligned position */
+    transform: translateX(-50%);
     width: 44vw;
     min-width: 110px;
     max-width: 200px;
@@ -106,72 +106,5 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    max-height: 54vw;
-    overflow-y: visible;
-  }
-  .speech-bubble,
-  .user-bubble {
-    font-size: 0.97rem;
-    padding: 10px 10px;
-  }
-}
+    justify-content: flex-start; /* Stack
 
-@media (max-width: 600px) {
-  .bubble-overlay.mobile-bubble {
-    width: 70vw;
-    min-width: 80px;
-    max-width: 130px;
-    top: 50%;
-    max-height: 70vw;
-  }
-  .speech-bubble,
-  .user-bubble {
-    font-size: 0.90rem;
-    padding: 7px 6px;
-  }
-}
-
-.speech-bubble,
-.user-bubble {
-  border-radius: 22px;
-  padding: 18px 22px;
-  font-size: 1.13rem;
-  position: relative;
-  box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
-  text-align: center;
-  pointer-events: auto;
-  word-break: break-word;
-  z-index: 2;
-  border: none;
-  outline: none;
-  filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-  opacity: 0.53;
-}
-
-.speech-bubble {
-  background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
-  color: #222;
-  filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
-}
-.speech-bubble:after { display: none; }
-.user-bubble {
-  background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
-  color: #222;
-  filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
-}
-
-/* Only show one layout at a time */
-.mobile-layout { display: none; }
-@media (max-width: 900px) {
-  .web-layout { display: none; }
-  .mobile-layout { display: flex; }
-}
-@media (min-width: 901px) {
-  .web-layout { display: flex; }
-  .mobile-layout { display: none; }
-}
