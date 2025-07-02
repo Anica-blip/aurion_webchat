@@ -76,7 +76,7 @@ main {
     position: relative;
     width: 100vw;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* Vertically center content */
     min-height: 100vh;
     background: #111;
   }
@@ -89,9 +89,9 @@ main {
   }
   .bubble-overlay.mobile-bubble {
     position: absolute;
-    top: 29.7%;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 64vw;
     min-width: 175px;
     max-width: 320px;
