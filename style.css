@@ -54,7 +54,7 @@ main {
   gap: 18px;
 }
 
-/* Bubble for web view - match mobile bubble style and placement */
+/* --- WEBCHAT BUBBLES AT TOP FOR ROLL-UP FLOW --- */
 .bubble-overlay.desktop-bubble {
   position: absolute;
   top: 29.7%;
