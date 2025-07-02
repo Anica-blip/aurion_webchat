@@ -54,21 +54,16 @@ main {
   gap: 12px;
 }
 
-/* --- WEBCHAT BUBBLES AT BOTTOM FOR ROLL-UP FLOW --- */
+/* --- WEBCHAT BUBBLES AT TOP FOR ROLL-UP FLOW --- */
 .bubble-overlay.desktop-bubble {
   position: absolute;
+  top: 24%;
   left: 66.4%;
-  bottom: 6.5%;
   width: 16vw;
   min-width: 200px;
   max-width: 260px;
   pointer-events: none;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  justify-content: flex-end;
 }
 
 /* --- MOBILE VIEW: BUBBLES AT TOP, NORMAL CHAT SCROLL-UP --- */
