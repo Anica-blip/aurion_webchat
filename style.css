@@ -54,7 +54,6 @@ main {
   gap: 12px;
 }
 
-/* Bubble for web view */
 .bubble-overlay.desktop-bubble {
   position: absolute;
   top: 24%;
@@ -66,7 +65,7 @@ main {
   z-index: 2;
 }
 
-/* Mobile view */
+/* --- MOBILE VIEW FIXES --- */
 @media (max-width: 900px) {
   .web-layout {
     display: none;
@@ -76,7 +75,7 @@ main {
     position: relative;
     width: 100vw;
     justify-content: center;
-    align-items: center; /* Vertically center content */
+    align-items: center;
     min-height: 100vh;
     background: #111;
   }
@@ -90,17 +89,22 @@ main {
   .bubble-overlay.mobile-bubble {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 62%; /* Move down to phone screen */
     transform: translate(-50%, -50%);
-    width: 64vw;
-    min-width: 175px;
-    max-width: 320px;
+    width: 48vw;
+    min-width: 130px;
+    max-width: 220px;
     pointer-events: none;
     z-index: 2;
+    gap: 10px;
+  }
+  .speech-bubble,
+  .user-bubble {
+    font-size: 0.97rem;
+    padding: 10px 10px;
   }
 }
 
-/* Modern, borderless, digital-friendly bubble style */
 .speech-bubble,
 .user-bubble {
   border-radius: 22px;
@@ -115,11 +119,11 @@ main {
   border: none;
   outline: none;
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
-  width: 100%;      /* Ensures both bubbles fill parent overlay */
+  width: 100%;
   min-width: 0;
   max-width: 100%;
   box-sizing: border-box;
-  opacity: 0.53; /* 53% transparency for both bubbles */
+  opacity: 0.53;
 }
 
 .speech-bubble {
@@ -127,12 +131,7 @@ main {
   color: #222;
   filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
 }
-
-.speech-bubble:after {
-  display: none;
-}
-
-/* User bubble: clone of assistant with yellow colour and glow */
+.speech-bubble:after { display: none; }
 .user-bubble {
   background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
   color: #222;
@@ -141,39 +140,25 @@ main {
 
 @media (max-width: 600px) {
   .bubble-overlay.mobile-bubble {
-    width: 84vw;
-    min-width: 130px;
-    max-width: 260px;
-    top: 29.7%;
+    width: 78vw;
+    min-width: 80px;
+    max-width: 170px;
+    top: 62%;
   }
-  .speech-bubble {
-    font-size: 0.99rem;
-    padding: 10px 10px;
-  }
+  .speech-bubble,
   .user-bubble {
-    font-size: 0.99rem;
-    padding: 10px 10px;
+    font-size: 0.90rem;
+    padding: 7px 6px;
   }
 }
 
-.mobile-layout {
-  display: none;
-}
+.mobile-layout { display: none; }
 
 @media (max-width: 900px) {
-  .web-layout {
-    display: none;
-  }
-  .mobile-layout {
-    display: flex;
-  }
+  .web-layout { display: none; }
+  .mobile-layout { display: flex; }
 }
-
 @media (min-width: 901px) {
-  .web-layout {
-    display: flex;
-  }
-  .mobile-layout {
-    display: none;
-  }
+  .web-layout { display: flex; }
+  .mobile-layout { display: none; }
 }
