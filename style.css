@@ -119,6 +119,7 @@ main {
   min-width: 0;
   max-width: 100%;
   box-sizing: border-box;
+  opacity: 0.53; /* 53% transparency for both bubbles */
 }
 
 .speech-bubble {
