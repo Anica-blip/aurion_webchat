@@ -54,111 +54,21 @@ main {
   gap: 12px;
 }
 
+/* --- WEBCHAT BUBBLES AT BOTTOM FOR ROLL-UP FLOW --- */
 .bubble-overlay.desktop-bubble {
   position: absolute;
-  top: 24%;
   left: 66.4%;
+  bottom: 6.5%; /* Place near bottom of webchat area */
   width: 16vw;
   min-width: 200px;
   max-width: 260px;
   pointer-events: none;
   z-index: 2;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end; /* Stack upwards from the bottom */
+  /* Optional: limit height for scrolling bubbles if needed */
+  /* max
 
-/* --- MOBILE VIEW FIXES --- */
-@media (max-width: 900px) {
-  .web-layout {
-    display: none;
-  }
-  .mobile-layout {
-    display: flex;
-    position: relative;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #111;
-  }
-  .mobile-bg {
-    width: 100vw;
-    min-width: 260px;
-    max-width: 460px;
-    height: auto;
-    display: block;
-  }
-  .bubble-overlay.mobile-bubble {
-    position: absolute;
-    left: 50%;
-    top: 62%; /* Move down to phone screen */
-    transform: translate(-50%, -50%);
-    width: 48vw;
-    min-width: 130px;
-    max-width: 220px;
-    pointer-events: none;
-    z-index: 2;
-    gap: 10px;
-  }
-  .speech-bubble,
-  .user-bubble {
-    font-size: 0.97rem;
-    padding: 10px 10px;
-  }
-}
-
-.speech-bubble,
-.user-bubble {
-  border-radius: 22px;
-  padding: 18px 22px;
-  font-size: 1.13rem;
-  position: relative;
-  box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
-  text-align: center;
-  pointer-events: auto;
-  word-break: break-word;
-  z-index: 2;
-  border: none;
-  outline: none;
-  filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-  opacity: 0.53;
-}
-
-.speech-bubble {
-  background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
-  color: #222;
-  filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
-}
-.speech-bubble:after { display: none; }
-.user-bubble {
-  background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
-  color: #222;
-  filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
-}
-
-@media (max-width: 600px) {
-  .bubble-overlay.mobile-bubble {
-    width: 78vw;
-    min-width: 80px;
-    max-width: 170px;
-    top: 62%;
-  }
-  .speech-bubble,
-  .user-bubble {
-    font-size: 0.90rem;
-    padding: 7px 6px;
-  }
-}
-
-.mobile-layout { display: none; }
-
-@media (max-width: 900px) {
-  .web-layout { display: none; }
-  .mobile-layout { display: flex; }
-}
-@media (min-width: 901px) {
-  .web-layout { display: flex; }
-  .mobile-layout { display: none; }
-}
