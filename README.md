@@ -83,6 +83,6 @@ MIT License
 - [Supabase](https://supabase.com/)
 - [Render](https://render.com/)
 - [Flashblitz](https://flashblitz.com/)
-- [Your Name or Org]
+- [3C Thread To Success]
 
-*Aurion Webchat upholds a 3C practice: Clarity, Collaboration, and Credits.*
+*Aurion 3C Mascot Webchat upholds a 3C practice: Clarity, Collaboration, and Credits.*
