@@ -50,59 +50,23 @@ main {
 .bubble-overlay.mobile-bubble {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
 }
 
-.desktop-bubble {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centers bubbles horizontally inside container */
-  gap: 12px;
-  width: 260vw; /* fixed width matching bubble width */
-  min-width: 200px;
-  max-width: 260px;
+/* Bubble for web view */
+.bubble-overlay.desktop-bubble {
   position: absolute;
   top: 24%;
   left: 66.4%;
+  width: 16vw;
+  min-width: 200px;
+  max-width: 260px;
   pointer-events: none;
   z-index: 2;
-  align-items: center; /* centers child bubbles horizontally */
 }
 
-.speech-bubble,
-.user-bubble {
-  width: 260px;
-  max-width: 260px;
-  box-sizing: border-box;
-  border-radius: 22px;
-  padding: 18px 22px;
-  font-size: 1.13rem;
-  position: relative;
-  box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
-  text-align: left;
-  pointer-events: auto;
-  word-break: break-word;
-  z-index: 2;
-  border: none;
-  outline: none;
-}
-
-.speech-bubble {
-  background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
-  color: #222;
-  filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
-}
-
-.user-bubble {
-  background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
-  color: #222;
-  filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
-}
-
-.speech-bubble:after {
-  display: none;
-}
-
+/* Mobile view */
 @media (max-width: 900px) {
   .web-layout {
     display: none;
@@ -133,18 +97,45 @@ main {
     max-width: 320px;
     pointer-events: none;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
   }
-  .speech-bubble,
-  .user-bubble {
-    width: 180px;
-    max-width: 180px;
-    font-size: 0.99rem;
-    padding: 10px 10px;
-  }
+}
+
+/* Modern, borderless, digital-friendly bubble style */
+.speech-bubble,
+.user-bubble {
+  border-radius: 22px;
+  padding: 18px 22px;
+  font-size: 1.13rem;
+  position: relative;
+  box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
+  text-align: center;
+  pointer-events: auto;
+  word-break: break-word;
+  z-index: 2;
+  border: none;
+  outline: none;
+  filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
+  width: 100%;      /* Ensures both bubbles fill parent overlay */
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.speech-bubble {
+  background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
+  color: #222;
+  filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
+}
+
+.speech-bubble:after {
+  display: none;
+}
+
+/* User bubble: clone of assistant with yellow colour and glow */
+.user-bubble {
+  background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
+  color: #222;
+  filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
 }
 
 @media (max-width: 600px) {
@@ -153,6 +144,14 @@ main {
     min-width: 130px;
     max-width: 260px;
     top: 29.7%;
+  }
+  .speech-bubble {
+    font-size: 0.99rem;
+    padding: 10px 10px;
+  }
+  .user-bubble {
+    font-size: 0.99rem;
+    padding: 10px 10px;
   }
 }
 
