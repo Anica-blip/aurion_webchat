@@ -1,4 +1,4 @@
-html, body {
+rhtml, body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -73,7 +73,7 @@ main {
   font-size: 1.13rem;
   position: relative;
   box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
-  text-align: left;
+  text-align: center;
   pointer-events: auto;
   word-break: break-word;
   z-index: 2;
