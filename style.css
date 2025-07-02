@@ -50,11 +50,11 @@ main {
 .bubble-overlay.mobile-bubble {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;      /* Left-align bubbles */
   gap: 12px;
 }
 
-/* --- WEBCHAT BUBBLES AT TOP FOR ROLL-UP FLOW --- */
+/* Bubble for web view - fixes only for desktop/webchat */
 .bubble-overlay.desktop-bubble {
   position: absolute;
   top: 24%;
@@ -64,9 +64,51 @@ main {
   max-width: 260px;
   pointer-events: none;
   z-index: 2;
+  align-items: flex-start;      /* Left-align bubbles */
 }
 
-/* --- MOBILE VIEW: BUBBLES AT TOP, NORMAL CHAT SCROLL-UP --- */
+.speech-bubble,
+.user-bubble {
+  border-radius: 18px;
+  padding: 15px 16px;
+  font-size: 1.13rem;
+  position: relative;
+  box-shadow: 0 8px 32px 0 rgba(97,216,230,0.16), 0 1.5px 16px 0 rgba(80,200,220,0.09);
+  text-align: left;                 /* Align text to left */
+  pointer-events: auto;
+  word-break: break-word;
+  z-index: 2;
+  border: none;
+  outline: none;
+  filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
+  width: auto;                    /* Bubble size fits content */
+  min-width: 65px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  opacity: 0.53;
+  display: block;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+
+/* Remove full width/block button look for bubbles */
+.speech-bubble {
+  background: linear-gradient(135deg, #61d8e6 70%, #42b0bb 100%);
+  color: #222;
+  filter: drop-shadow(0 0 8px #61d8e6) drop-shadow(0 0 4px #fff2);
+}
+.speech-bubble:after {
+  display: none;
+}
+
+/* User bubble: clone of assistant with yellow colour and glow */
+.user-bubble {
+  background: linear-gradient(135deg, #f4d35e 70%, #ffb300 100%);
+  color: #222;
+  filter: drop-shadow(0 0 8px #f4d35e) drop-shadow(0 0 4px #fff2);
+}
+
 @media (max-width: 900px) {
   .web-layout {
     display: none;
@@ -76,7 +118,7 @@ main {
     position: relative;
     width: 100vw;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
     background: #111;
   }
@@ -89,17 +131,66 @@ main {
   }
   .bubble-overlay.mobile-bubble {
     position: absolute;
+    top: 29.7%;
     left: 50%;
-    top: 19%; /* Back to initial top-aligned position */
     transform: translateX(-50%);
-    width: 44vw;
-    min-width: 110px;
-    max-width: 200px;
+    width: 64vw;
+    min-width: 175px;
+    max-width: 320px;
     pointer-events: none;
-    z-index: 10;
-    gap: 10px;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Stack
+    gap: 12px;
+  }
+  .speech-bubble,
+  .user-bubble {
+    font-size: 0.97rem;
+    padding: 10px 10px;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
 
+@media (max-width: 600px) {
+  .bubble-overlay.mobile-bubble {
+    width: 84vw;
+    min-width: 130px;
+    max-width: 260px;
+    top: 29.7%;
+  }
+  .speech-bubble {
+    font-size: 0.99rem;
+    padding: 10px 10px;
+  }
+  .user-bubble {
+    font-size: 0.99rem;
+    padding: 10px 10px;
+  }
+}
+
+.mobile-layout {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .web-layout {
+    display: none;
+  }
+  .mobile-layout {
+    display: flex;
+  }
+}
+
+@media (min-width: 901px) {
+  .web-layout {
+    display: flex;
+  }
+  .mobile-layout {
+    display: none;
+  }
+}
