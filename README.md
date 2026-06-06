@@ -1,5 +1,7 @@
 # Aurion Webchat
 
+> ⚖️ This repository is protected under a binding [Legal Disclaimer](./LEGAL_DISCLAIMER.md) that governs all use, cloning, and forking from the date of inception. Please read before use.
+
 A modern, customizable web chat interface that connects users to an AI assistant powered by OpenAI GPT-4o. Chat sessions and logs are stored in Supabase (`webchat` table) for analytics and follow-up.
 
 ---
